@@ -1,1 +1,5 @@
-<p>user works!</p>
+<div class="card">
+    <h3>{{User.name.title}} {{User.name.first}} {{User.name.last}}</h3>
+    <img [src]="User.picture.thumbnail" alt="User thumbnail"><img>
+    <p>{{User.location.city}}</p>
+</div>
