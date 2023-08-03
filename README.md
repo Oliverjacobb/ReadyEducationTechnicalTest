@@ -5,7 +5,7 @@ This is an Angular v16 application that retrieves a list of users from an API.
 
 To run the application you will need to have the following installed...
 
-- Node.js
+- Node.js > v16 or V18
 - Angular CLI
 - NPM package manager
 
