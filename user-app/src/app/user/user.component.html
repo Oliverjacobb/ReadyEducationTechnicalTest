@@ -1,5 +1,22 @@
 <div class="card">
-    <h3>{{User.name.title}} {{User.name.first}} {{User.name.last}}</h3>
-    <img [src]="User.picture.thumbnail" alt="User thumbnail"><img>
-    <p>{{User.location.city}}</p>
+    <div class="card-content-container"> 
+    <div>
+        <h2>{{User.name.title}} {{User.name.first}} {{User.name.last}}</h2>
+        <img [src]="User.picture.medium" alt="User thumbnail"><img>
+    </div>
+    <div>
+        <p>{{User.location.street.number}} {{User.location.street.name}}</p>
+        <p>{{User.location.city}}, {{User.location.postcode}}, {{User.location.state}}</p>
+        <p>{{User.location.country}}</p>
+    </div>
+    <div>
+        <button mat-icon-button  *ngIf="User.location.coordinates.latitude && this.User.location.coordinates.longitude" (click)="openGoogleMaps()" [matTooltip]="'View user location'"><mat-icon>pin_drop</mat-icon></button>
+        <mat-icon [matTooltip]="retrieveTimeZoneToolTip">schedule</mat-icon>
+      </div>
+    <div>
+        <p>{{User.email}}</p>
+        <p>{{User.phone}}</p>
+        <p>{{User.cell}}</p>
+    </div>
+</div>
 </div>
