@@ -1,13 +1,15 @@
 <div class="searchContainer">
     <mat-form-field>
-      <mat-label>Search for a user by name or country</mat-label>
-      <input type="text" matInput [formControl]="SearchBox" [matAutocomplete]="searchBox"/>
-      <mat-autocomplete #searchBox="matAutocomplete" (optionSelected)="selectUser($event.option.value)" [displayWith]="getUserName">
-        <mat-option *ngFor="let user of SearchedUsers" [value]="user">
-            {{user.name.first}} {{user.name.last}} |
-            {{user.location.country}}
-        </mat-option>
-      </mat-autocomplete>
+        <mat-label>Search for a user by name or country</mat-label>
+        <input type="text" matInput [formControl]="SearchBox" [matAutocomplete]="searchBox" />
+        <mat-autocomplete #searchBox="matAutocomplete" (optionSelected)="selectUser($event.option.value)"
+            [displayWith]="getUserName">
+            <mat-option *ngFor="let user of SearchedUsers" [value]="user">
+                {{user.name.first}} {{user.name.last}} |
+                {{user.location.country}}
+            </mat-option>
+        </mat-autocomplete>
     </mat-form-field>
-    <button mat-raised-button color="accent" (click)="resetUserList()" *ngIf="Users.length !== FullUsers.length">Back to Full User List</button>
+    <button mat-raised-button color="accent" (click)="resetUserList()" *ngIf="Users.length !== FullUsers.length">Back to
+        Full User List</button>
 </div>

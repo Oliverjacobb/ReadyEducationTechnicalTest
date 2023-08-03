@@ -12,7 +12,7 @@ export class UserSearchComponent implements OnInit {
   @Input() Users: IUser[] =[];
   SearchBox = new FormControl();
   SearchedUsers: IUser[] = [];
-  @Output() SelectedUser = new EventEmitter<IUser>;
+  @Output() UserSelected = new EventEmitter<IUser>;
   FullUsers: IUser[] = [];
   @Output() ResetUsers = new EventEmitter<IUser[]>;
 
@@ -44,7 +44,7 @@ export class UserSearchComponent implements OnInit {
   }
 
   selectUser(user: IUser): void {
-    this.SelectedUser.emit(user);
+    this.UserSelected.emit(user);
   }
   
   resetUserList(): void {

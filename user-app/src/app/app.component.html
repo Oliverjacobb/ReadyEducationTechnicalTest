@@ -1,5 +1,6 @@
 <ng-container *ngIf="Users.length">
-  <app-user-search [Users]="Users" (SelectedUser)="selectUser($event)" (ResetUsers)="resetUsers($event)"></app-user-search>
+  <app-user-search [Users]="Users" (UserSelected)="selectUser($event)"
+    (ResetUsers)="resetUsers($event)"></app-user-search>
   <div class="card-container">
     <app-user *ngFor="let user of Users" [User]="user"></app-user>
   </div>
